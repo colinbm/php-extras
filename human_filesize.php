@@ -1,3 +1,4 @@
+<?php
 /*
  * human_filesize - Take a size in bytes, and return a human
  * readable version.
