@@ -7,10 +7,13 @@
  *
  */
 function array_index($array, $key) {
-	if (!is_array($array)) return false;
 	$new_array = array();
 	foreach ($array as $element) {
-		$new_array[$element[$key]] = $element;
+		if (is_array($element)) {
+			$new_array[$element[$key]] = $element;
+		} elseif (is_object($element)) {
+			$new_array[$element->{$key}] = $element;
+		}
 	}
 	return $new_array;
 }
